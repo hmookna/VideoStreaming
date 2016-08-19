@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal"
+tools:context="com.example.videostreaming.PlayVideoFragment">
+
+    <SeekBar
+        android:id="@+id/seekBarVoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/txtSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBarVoice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Sound Volume Control"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <SurfaceView android:id="@+id/firstSurface"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/mediacontroller"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:background="#80757575">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:id="@+id/seekbarlayout"
+            android:layout_weight="1"
+            android:weightSum="6">
+
+            <TextView
+                android:text="00:00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/seekBar1"
+                android:textColor="@color/textColor"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="0"
+                android:id="@+id/position" />
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/puase"
+                android:layout_weight="6"
+                android:layout_alignParentLeft="true"  />
+
+            <TextView
+                android:text="00:00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/seekBar1"
+                android:textColor="@color/textColor"
+                android:layout_weight="0"
+                android:layout_alignParentRight="true"
+                android:id="@+id/duration" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_play_arrow_black_24dp"
+                android:background="#00000000" />
+
+            <Button
+                android:id="@+id/puase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/play"
+                android:layout_alignBottom="@+id/play"
+                android:layout_toRightOf="@+id/play"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_pause_black_24dp"
+                android:background="#00000000"/>
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/puase"
+                android:layout_alignBottom="@+id/puase"
+                android:layout_toRightOf="@+id/puase"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_stop_black_24dp"
+                android:background="#00000000"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
